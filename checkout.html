@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - ShopEase</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Brand Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="assets/images/favicon.png" alt="ShopEase Logo" width="50" height="40">
+            </a>
+            
+            <!-- Navbar Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+                
+                <!-- Profile & Cart Section -->
+                <ul class="navbar-nav ms-3">
+                    <!-- User Profile Dropdown -->
+                    <li class="nav-item dropdown" id="profile-dropdown" style="display: none;">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user"></i> <span id="username">Profile</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" id="logout-btn">Logout</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Login Link -->
+                    <li class="nav-item" id="login-link">
+                        <a class="nav-link" href="auth.html">Login</a>
+                    </li>
+                    
+                    <!-- Cart Icon -->
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> My Cart
+                            <span class="badge bg-danger position-absolute top-0 start-100 translate-middle" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Content -->
+    <div class="container mt-5">
+        <h2 class="text-center">Checkout</h2>
+
+        <!-- Cart Items Summary -->
+        <div id="checkout-items" class="row"></div>
+
+        <!-- Total Price -->
+        <h3 class="text-end mt-3">Total: $<span id="checkout-total">0</span></h3>
+
+        <!-- Shipping Details Form -->
+        <div class="mt-4">
+            <h4>Shipping Details</h4>
+            <form id="checkout-form">
+                <div class="mb-3">
+                    <label for="full-name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="full-name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" required>
+                </div>
+                <div class="mb-3">
+                    <label for="payment-method" class="form-label">Payment Method</label>
+                    <select class="form-control" id="payment-method" required>
+                        <option value="cod">Cash on Delivery</option>
+                        <option value="card">Credit/Debit Card</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/checkout.js"></script>
+</body>
+</html>

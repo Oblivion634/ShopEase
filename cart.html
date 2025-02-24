@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - ShopEase</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Brand Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/favicon.png" alt="ShopEase Logo" width="50" height="40">
+            </a>
+            
+            <!-- Navbar Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+                
+                <!-- Profile & Cart Section -->
+                <ul class="navbar-nav ms-3">
+                    <!-- User Profile Dropdown -->
+                    <li class="nav-item dropdown" id="profile-dropdown" style="display: none;">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user"></i> <span id="username">Profile</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" id="logout-btn">Logout</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Login Link -->
+                    <li class="nav-item" id="login-link">
+                        <a class="nav-link" href="auth.html">Login</a>
+                    </li>
+                    
+                    <!-- Cart Icon -->
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> My Cart
+                            <span class="badge bg-danger position-absolute top-0 start-100 translate-middle" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Content -->
+    <div class="container mt-5">
+        <h2 class="text-center">Your Cart</h2>
+        <div id="cart-items" class="row"></div>
+        <h3 class="text-end mt-3">Total: $<span id="cart-total">0</span></h3>
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-danger mt-3" id="clear-cart">Clear Cart</button>
+            <button class="btn btn-success mt-3" id="checkout-btn"><a href="checkout.html" style="color: black; text-decoration: none;">Proceed to Checkout</a></button>
+        </div>
+    </div>
+
+    <script src="assets/js/cart.js"></script>
+</body>
+</html>
