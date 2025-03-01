@@ -85,3 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     displayCartItems();
 });
+
+function updateCartCount() {
+    const cartCountElement = document.getElementById("cart-count");
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCountElement.textContent = totalItems;
+}
+
+document.addEventListener("DOMContentLoaded", updateCartCount);

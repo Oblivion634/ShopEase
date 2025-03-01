@@ -88,8 +88,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.querySelectorAll('.view-details, .product-image').forEach((element) => {
             element.addEventListener('click', (event) => {
                 const productId = event.target.getAttribute("data-id");
-                localStorage.setItem("selectedProduct", productId);
-                window.location.href = "product.html"; // Redirect to product details page
+                window.open(`product.html?id=${productId}`, "_blank"); // Open in a new tab with ID in URL
             });
         });
     }

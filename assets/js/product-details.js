@@ -2,13 +2,17 @@ import { fetchProducts } from './api.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
     const productDetailsContainer = document.getElementById("product-details");
-    const productId = localStorage.getItem("selectedProduct");
+
+    // Get product ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get("id");
 
     if (!productId) {
         productDetailsContainer.innerHTML = `<p class="text-danger">Product not found!</p>`;
         return;
     }
 
+    // Fetch products from API
     const products = await fetchProducts();
     const product = products.find(p => p.id == productId);
 
@@ -50,13 +54,12 @@ function addToCart(product) {
     updateCartCount();
     Toastify({
         text: "Added to cart!",
-        duration: 3000,  // Duration in milliseconds
-        close: true,     // Show close button
-        gravity: "top",  // Position: "top" or "bottom"
-        position: "right", // "left", "center" or "right"
-        backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)", // Custom background
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
     }).showToast();
-    
 }
 
 // Function to update cart count in the navbar
