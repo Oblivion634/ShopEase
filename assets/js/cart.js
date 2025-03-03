@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
             cartItem.classList.add("col-md-4", "mb-3");
 
             cartItem.innerHTML = `
-                <div class="card">
+                <div class="card" style="height:430px;">
                     <img src="${item.image}" class="card-img-top" alt="${item.title}">
                     <div class="card-body">
                         <h5 class="card-title">${item.title}</h5>

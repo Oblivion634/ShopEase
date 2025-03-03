@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     productDetailsContainer.innerHTML = `
         <div class="col-md-4 me-5">
-            <img src="${product.image}" class="img-fluid" alt="${product.title}">
+            <img src="${product.image}" class="img-fluid p-3" alt="${product.title}" style="height:370px;">
         </div>
         <div class="col-md-5 ms-5">
             <h2>${product.title}</h2>
