@@ -12,5 +12,29 @@ async function fetchProducts() {
     }
 }
 
-// Export the function for use in script.js
-export { fetchProducts };
+// Function to fetch product categories
+async function fetchCategories() {
+    try {
+        const response = await fetch("https://fakestoreapi.com/products/categories");
+        const categories = await response.json();
+        return categories;
+    } catch (error) {
+        console.error("Error fetching categories:", error);
+        return [];
+    }
+}
+
+// Function to fetch products by category
+async function fetchProductsByCategory(category) {
+    try {
+        const response = await fetch(`https://fakestoreapi.com/products/category/${category}`);
+        const products = await response.json();
+        return products;
+    } catch (error) {
+        console.error("Error fetching products by category:", error);
+        return [];
+    }
+}
+
+// Export functions
+export { fetchProducts, fetchCategories, fetchProductsByCategory };
